@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Shopnix — Onboarding Wizard</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <div class="brand">Shopnix</div>
+      <div class="title">
+        <h1>Store Onboarding</h1>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progressBar"></div>
+      </div>
+      <div class="steps-labels">
+        <span>Step 1</span><span>Step 2</span><span>Step 3</span>
+      </div>
+
+      <!-- STEP 1 -->
+      <form id="step1" class="step">
+        <h2>Select a theme</h2>
+        <p class="muted">Pick a primary color for your store.</p>
+
+        <div class="swatches">
+          <button type="button" class="swatch selected" data-name="Orange" data-hex="#ff7a00">
+            <span class="dot" style="background:#ff7a00"></span>
+            <span>Orange</span>
+          </button>
+
+          <button type="button" class="swatch" data-name="Turquoise" data-hex="#10b6b6">
+            <span class="dot" style="background:#10b6b6"></span>
+            <span>Turquoise</span>
+          </button>
+
+          <button type="button" class="swatch" data-name="Blue" data-hex="#2b82ff">
+            <span class="dot" style="background:#2b82ff"></span>
+            <span>Blue</span>
+          </button>
+        </div>
+
+        <div class="preview" id="preview">
+          <strong>Preview</strong>
+          <div class="btns">
+            <button class="btn primary">Primary CTA</button>
+            <button class="btn outline">Secondary</button>
+          </div>
+        </div>
+
+        <div class="actions">
+          <div></div>
+          <button type="button" id="to2" class="btn primary">Next</button>
+        </div>
+      </form>
+
+      <!-- STEP 2 -->
+      <form id="step2" class="step hidden">
+        <h2>Product details</h2>
+        <p class="muted">Select product type and category.</p>
+
+        <label class="field">
+          <span>Product type</span>
+          <select id="ptype" required>
+            <option value="">Choose product type</option>
+            <option>Clothing</option>
+            <option>Electronics</option>
+            <option>Home & Living</option>
+            <option>Beauty</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Category</span>
+          <select id="pcat" required>
+            <option value="">Choose category</option>
+            <option>Men</option>
+            <option>Women</option>
+            <option>Kids</option>
+            <option>Accessories</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>Short description (optional)</span>
+          <textarea id="desc" rows="3" placeholder="Short description"></textarea>
+        </label>
+
+        <div class="actions">
+          <button type="button" id="back1" class="btn link">Back</button>
+          <button type="button" id="to3" class="btn primary">Next</button>
+        </div>
+      </form>
+
+      <!-- STEP 3 -->
+      <form id="step3" class="step hidden">
+        <h2>Pricing & Add-ons</h2>
+        <p class="muted">Choose a plan and optional extras. Scroll the list for details.</p>
+
+        <div class="grid">
+          <div class="left">
+            <div class="scroll-list" id="pricingList">
+              <label class="plan">
+                <input type="radio" name="plan" value="Basic" checked>
+                <div>
+                  <strong>Basic Plan</strong>
+                  <div class="small muted">Up to 50 products • Basic support</div>
+                </div>
+                <div class="price">₹499 / mo</div>
+              </label>
+
+              <label class="plan">
+                <input type="radio" name="plan" value="Growth">
+                <div>
+                  <strong>Growth Plan</strong>
+                  <div class="small muted">Up to 500 products • Priority support</div>
+                </div>
+                <div class="price">₹1,499 / mo</div>
+              </label>
+
+              <label class="plan">
+                <input type="radio" name="plan" value="Pro">
+                <div>
+                  <strong>Pro Plan</strong>
+                  <div class="small muted">Unlimited products • Dedicated manager</div>
+                </div>
+                <div class="price">₹3,499 / mo</div>
+              </label>
+
+              <!-- extras -->
+              <div class="extra">
+                <strong>Inventory Sync</strong>
+                <div class="small muted">Connect with marketplaces and sync inventory automatically.</div>
+              </div>
+              <div class="extra">
+                <strong>Advanced Analytics</strong>
+                <div class="small muted">Deeper insights into sales & customers.</div>
+              </div>
+              <div class="extra">
+                <strong>White-glove Onboarding</strong>
+                <div class="small muted">A dedicated specialist to set up your store.</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="right">
+            <div class="summary">
+              <h3>Summary</h3>
+              <ul>
+                <li><strong>Theme:</strong> <span id="sTheme">Orange</span></li>
+                <li><strong>Type:</strong> <span id="sType">Clothing</span></li>
+                <li><strong>Category:</strong> <span id="sCat">Men</span></li>
+                <li><strong>Plan:</strong> <span id="sPlan">Basic</span></li>
+              </ul>
+
+              <div class="actions-col">
+                <button type="button" id="back2" class="btn link">Back</button>
+                <button type="button" id="finish" class="btn primary">Finish</button>
+              </div>
+            </div>
+          </aside>
+        </div>
+
+      </form>
+
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
